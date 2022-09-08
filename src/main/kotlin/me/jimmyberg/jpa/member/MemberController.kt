@@ -2,6 +2,7 @@ package me.jimmyberg.jpa.member
 
 import me.jimmyberg.jpa.entity.Member
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
@@ -13,5 +14,8 @@ class MemberController(
 
     @GetMapping("/all")
     fun findAll(): List<Member> = memberService.findAll()
+
+    @PostMapping
+    fun save() = memberService.save()
 
 }
